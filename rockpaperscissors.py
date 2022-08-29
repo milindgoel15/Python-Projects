@@ -64,11 +64,14 @@ def gameLogic(user_choice):
    # user_choice = userChoice()
    comp_art = compArt(computer_choice)
    user_art = userArt(user_choice)
-  
 
-   if user_choice == computer_choice:
+   if user_choice != 'rock' or user_choice != 'paper' or user_choice != 'scissor':
+      print("\nIncorrect option! Choose rock, paper or scissor only")
+
+   elif user_choice == computer_choice:
       print(f'Computer chose: {computer_choice}\n {comp_art}\n User chose: {user_choice}\n {user_art}\n')
       print("Both players selected same action, it's a tie!")
+
    elif user_choice == 'rock':
       if computer_choice == 'scissor':
          print(f'Computer chose: {computer_choice}\n {comp_art}\n User chose: {user_choice}\n {user_art}\n')
@@ -91,7 +94,6 @@ def gameLogic(user_choice):
       else:
          print(f'Computer chose: {computer_choice}\n {comp_art}\n User chose: {user_choice}\n {user_art}\n')
          print("Rock smashes scissors! You lose!")
-   
 
 def main():
    userChoice = input("Please choose your input for the game: rock, paper or scissor: ").lower()
